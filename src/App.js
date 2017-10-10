@@ -9,6 +9,13 @@ function createItem (name) {
   };
 }
 
+const defaultTodos = [
+  '리액트 시작하기',
+  '컴포넌트 이해하기',
+  'props/state 사용하기',
+  'LifeCycle API'
+].map(createItem);
+ 
 class App extends Component {
   render() {
     return (
