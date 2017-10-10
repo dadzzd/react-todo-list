@@ -43,6 +43,18 @@ class App extends Component {
     });
   }
 
+  handleRemove = (id) => {
+    const { todoItems } = this.state;
+    const index = todoItems.findIndex((item) => item.id === id);
+
+    this.setState({
+      todoItems: [
+        ...todoItems.slice(0, index), // 0~index 전
+        ...todoItems.slice(index + 1, todoItems.length)
+      ]
+    });
+  }
+
   render() {
     return (
       <div className="App">
