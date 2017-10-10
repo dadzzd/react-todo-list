@@ -17,10 +17,13 @@ const defaultTodos = [
 ].map(createItem);
  
 class App extends Component {
+  state = {
+    todoItems: defaultTodos
+  }
   render() {
     return (
       <div className="App">
-
+        <h1>TODO LIST</h1>
       </div>
     );
   }
