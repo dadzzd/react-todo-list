@@ -55,6 +55,12 @@ class App extends Component {
     });
   }
 
+  handleReset = () => {
+    this.setState({
+      todoItems: defaultStatus
+    });
+  }
+
   render() {
     return (
       <div className="App">
