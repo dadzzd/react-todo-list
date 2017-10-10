@@ -20,6 +20,13 @@ class App extends Component {
   state = {
     todoItems: defaultTodos
   }
+
+  handlerInsert = (name) => {
+    this.setState({
+      todoItems: [...this.state.todoItems, createItem(name)]
+    });
+  }
+  
   render() {
     return (
       <div className="App">
