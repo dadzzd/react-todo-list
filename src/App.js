@@ -26,7 +26,23 @@ class App extends Component {
       todoItems: [...this.state.todoItems, createItem(name)]
     });
   }
-  
+
+  handleToggle = (id) => {
+    const { todoItems } = this.state;
+    const index = todoItems.findIndex((item) => item.id === id);
+    const item = todoItems[index];
+
+    this.setState({
+      todoItems: [
+        ...todoItems.slice(0, index), // 0~index 전
+        { ...item,
+          finished: !item.finished
+        },
+        ...todoItems.slicep(index + 1, todoItems.length)
+      ]
+    });
+  }
+
   render() {
     return (
       <div className="App">
